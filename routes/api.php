@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('movies', [\App\Http\Controllers\API\DataController::class,'fetchAllDataMovies']);
+Route::get('tv', [\App\Http\Controllers\API\DataController::class,'fetchAllDataTv']);
