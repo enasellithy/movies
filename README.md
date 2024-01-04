@@ -33,4 +33,5 @@ Is Fetch Movie Data
 - Fetch Data for all movies http://localhost:8000/api/movies?page={page}
 - Fetch Data for all movies http://localhost:8000/api/tv?page={page}
 
-- Fetch Api 
+## Storing Data
+- php artisan firebase:app Notes (make sure when run this command is server is running on port 8000)
