@@ -9,12 +9,11 @@ trait JsonTrait
         return response()->json($data);
     }
 
-    public function whenError($data)
+    public function whenError($msg)
     {
         return response()->json([
             'status' => false,
-            'message' => $data,
-            'data' => null,
+            'message' => $msg,
         ],400);
     }
 }

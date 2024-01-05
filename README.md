@@ -35,3 +35,8 @@ Is Fetch Movie Data
 
 ## Storing Data
 - php artisan firebase:app Notes (make sure when run this command is server is running on port 8000)
+
+## Fetch Data From Firebase 
+- /api/get_data_all => GET Type To Fetch All Data
+- /api/get_data_movies => GET Type To Fetch All Movies (Notes every page have 10 items need to add (?page={page}) in url to get next 10 )
+- /api/get_data_tv => GET Type To Fetch All Tv (Notes every page have 10 items need to add (?page={page}) in url to get next 10 )

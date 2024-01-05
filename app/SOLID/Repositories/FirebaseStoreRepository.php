@@ -3,6 +3,8 @@
 namespace App\SOLID\Repositories;
 
 use App\Http\Resources\API\DataFetchResource;
+use App\SOLID\Traits\JsonTrait;
+use App\SOLID\Traits\PaginateTraits;
 use GuzzleHttp\Client;
 use Kreait\Firebase\Factory;
 
@@ -53,5 +55,33 @@ class FirebaseStoreRepository
             $database2->getReference('Tv/')->push($v);
         }
 
+    }
+
+    public function get_firebase_movies()
+    {
+        try {
+            $firebase = (new Factory)
+                ->withServiceAccount(public_path() . '/firebase.json')
+                ->withDatabaseUri('https://vuejs-45225-default-rtdb.firebaseio.com');
+            $database2 = $firebase->createDatabase();
+            $values = $database2->getReference('/Movies');
+            return $values->getValue();
+        }catch (err){
+            return $this->whenError('Some Thing Wrong');
+        }
+    }
+
+    public function get_firebase_tv()
+    {
+        try {
+            $firebase = (new Factory)
+                ->withServiceAccount(public_path() . '/firebase.json')
+                ->withDatabaseUri('https://vuejs-45225-default-rtdb.firebaseio.com');
+            $database2 = $firebase->createDatabase();
+            $values = $database2->getReference('/Tv');
+            return $values->getValue();
+        }catch (err){
+            return $this->whenError('Some Thing Wrong');
+        }
     }
 }
