@@ -22,7 +22,7 @@ Is Fetch Movie Data
 - cd movies[FetchDataRepository.php](..%2F..%2Flaravelapp%2Fredit%2Fapp%2FSOLID%2FRepositories%2FFetchDataRepository.php)
 - composer install
 - cp .env.example .env
-- php artisan key:generate
+- php artisan key:generate[README (1).md](..%2Fredit%2Ftask%2FREADME%20%281%29.md)
 - php artisan serv --port=8000
 
 ## API
